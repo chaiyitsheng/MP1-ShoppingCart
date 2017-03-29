@@ -1,0 +1,33 @@
+<div class="container">
+    <br>
+    <div>
+        <h4 class="AlignTop text-center Museo-500 pageHeadTitle">{{pageState | uppercase}}</h4></div>
+    <br>
+    <center>
+        <dir-pagination-controls ng-show="products.length>=1"></dir-pagination-controls>
+    </center>
+    <center>
+        <div ng-show="products.length==0">Cannot find matches for {{pageState | uppercase}}</div>
+    </center>
+    <br>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 text-center animation" dir-paginate="product in products|itemsPerPage:20" style="overflow: hidden">
+        <!-- <div href="" ui-sref="productDetail({productId:product._id})"> -->
+        <div class="panel panel-default" ui-sref="productDetail({productId:product._id})" ng-class="{'hoverEffect':hovering}" ng-mouseenter="hovering=true" ng-mouseleave="hovering=false">
+            <div class="panel-body">
+                <img class="" style="width:100%;object-fit: cover;overflow: hidden" ng-src='{{url}}thumbnail{{product.infoObj.pdImages.pdImg1}}'>
+            </div>
+            <div style="padding-top:5px;height:50px">
+                <a style="font-size:12px;color:#686868" class="bold600">{{product.infoObj.pdName |uppercase | limitTo : 28 }} <span ng-show="product.infoObj.pdName.length>28">...</span> </a>
+                <div style="padding-top:5px;padding-right:5px;padding-left:5px;color:#727272;font-size:12px">
+                    <div class="red pull-left">{{((product.infoObj.pdRetailPrice-product.infoObj.pdSellingPrice)/product.infoObj.pdRetailPrice)*100 | number:0}}% off</div><span style="text-decoration: line-through">{{product.infoObj.pdRetailPrice | currency : 'RM ' : 2 }}</span>
+                    <div class="pull-right red bold600">{{product.infoObj.pdSellingPrice | currency : 'RM ' : 2 }}</div>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+    </div>
+    <br>
+</div>
+<center>
+    <dir-pagination-controls on-page-change="scrollToTop()" ng-show="products.length>=1"></dir-pagination-controls>
+</center>

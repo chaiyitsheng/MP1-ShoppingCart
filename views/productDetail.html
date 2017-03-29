@@ -1,0 +1,71 @@
+<div class="container animated fadeIn">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 text-center">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <img style="object-fit:contain" class="custom_img img-responsive center-block" ng-src='{{url}}{{thumbnail}}'>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 ">
+            <div class="panel panel-default" style="padding:15px">
+                <div class="panel-body text-center">
+                    <div class="text-center" style="font-size:20px;color:#5F5F5F">{{productDetail.infoObj.pdName}}</div>
+                    <!-- <div class="font-custom text-muted">Product Code: {{productDetail._id}}</div> -->
+                    <br>
+                    <div style="font-size:28px;line-height:30px" class="bold">{{productDetail.infoObj.pdSellingPrice | currency : 'RM ' : 2}}</div>
+                    <div style="text-decoration:line-through;font-size:16px;display:inline;line-height:30px" class="">{{productDetail.infoObj.pdRetailPrice | currency : 'RM ' : 2 }}</div>
+                    <!-- <div style="font-size:28px;line-height:30px;display:inline" class="">&nbsp;</div> -->
+                    <div class="red" style="font-size:20px;display:inline;line-height:30px">&nbsp;{{((productDetail.infoObj.pdRetailPrice-productDetail.infoObj.pdSellingPrice)/productDetail.infoObj.pdRetailPrice)*100 | number:0}}% off</div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="text-left bold">Overview</div>
+                    <br>
+                    <div class="text-left" ng-bind-html="to_trusted(productDetail.infoObj.pdOverview.text)"></div>
+                    <br>
+                    <!--                     <form class="userProfileForm form-horizontal" ng-hide="productDetail.infoObj.pdOptions.length==0">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Options</label>
+                            <div class="col-sm-10">
+                                <select name="" id="" class="special-style" ng-model="productDetail.infoObj.option">
+                                    <option value="{{item.label}}" ng-repeat="item in productDetail.infoObj.pdOptions">{{item.label}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form> -->
+                    <!-- <div class="row"> -->
+                <label for="">Size:  </label> 
+                <select bootstrap-select auto-width="true" ng-options="person as person for person in people" ng-model="currentPerson"></select>
+                    <!-- </div> -->
+                    <br>
+                    <div class="btn btn-customRed btn-block" ng-click="add(productDetail)">ADD TO CART</div>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+    <div class="container row text-center">
+        <img ng-repeat="image in productDetail.infoObj.pdImages" ng-class="{highlightThumbnail: $index===selectedIndex}" ng-if="image" class="thumbnail" style="height:100px;width:100px;display:inline;" ng-src='{{url}}thumbnail{{image}}' ng-click="selected(image,$index)">
+    </div>
+    <br>
+    <div class="row"></div>
+    <div>
+        <tabset justified="true" class="animated fadeIn">
+            <tab heading="Details">
+                <div ng-bind-html="to_trusted(productDetail.infoObj.pdDescription.text)" class="animated fadeIn"></div>
+            </tab>
+            <tab heading="The Fine Print">
+                <div ng-bind-html="to_trusted(productDetail.infoObj.pdFinePrint.text)" class="animated fadeIn"></div>
+            </tab>
+            <tab heading="Shipping Info">
+                <div ng-bind-html="to_trusted(productDetail.infoObj.pdShippingInfo.text)" class="animated fadeIn"></div>
+            </tab>
+            <tab heading="Warranty">
+                <div ng-bind-html="to_trusted(productDetail.infoObj.pdWarranty.text)" class="animated fadeIn"></div>
+            </tab>
+        </tabset>
+    </div>
+</div>
+<br>

@@ -1,0 +1,25 @@
+<div ng-controller="ModalDemoCtrl">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-body">
+            <form ng-submit="search()" name="register" class="" novalidate>
+                <br>
+                <h4 class="form-signin-heading text-center Museo-500">SEARCH</h4>
+                <br>
+                <input ng-model="searchTerm.search" name="search" type="text" placeholder="Search Term" class="form-control noRadius">
+                <br>
+                <div class="modal-footer" style="border:none">
+                <button class="btn btn-warning" ng-click="cancel()">
+                    Cancel
+                </button>
+                <button class="btn btn-customRed" type="submit">
+                    Search
+                </button>
+                </div>
+            </form>
+        </div>
+    </script>
+    <!--     <button class="btn btn-default" ng-click="open()">Open me!</button>
+    <button class="btn btn-default" ng-click="open('lg')">Large modal</button>
+    <button class="btn btn-default" ng-click="open('sm')">Small modal</button>
+    <div ng-show="selected">Selection from a modal: {{ selected }}</div> -->
+</div

@@ -1,0 +1,17 @@
+<div class="container-fluid cyHeader" sticky>
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left" ui-sref="menu">
+            <i class="cyHeaderIcon glyphicon glyphicon-menu-hamburger"></i> <span style="color:white;font-weight:500" class="">Menu</span>
+        </div>
+        <div ng-controller="ModalDemoCtrl" class="col-lg-5 col-md-5 col-sm-4 col-xs-2 text-left" ng-click="open('sm')">
+            <i class="cyHeaderIcon glyphicon glyphicon-search"></i>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 text-center" ui-sref="shoppingCart.view">
+            <i class="cyHeaderIcon glyphicon glyphicon-shopping-cart"></i>&nbsp;<span ng-controller="ShoppingCartCtrl" class="cartCounter badge">{{cartCount()}}</span>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 text-right" ui-sref="settings">
+            <i class="cyHeaderIcon glyphicon glyphicon-cog"></i>
+        </div>
+    </div>
+</div>
+

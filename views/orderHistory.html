@@ -1,0 +1,35 @@
+<div class="container animated fadeIn">
+    <br>
+    <h4 class="AlignTop text-center Museo-500 pageHeadTitle">ORDER HISTORY</h4>
+    <br>
+    <!-- <ul class="list-group">
+	    <li class="list-group-item row" ng-repeat="doc in history | orderBy:'odPayObj.odDate':true">
+	        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+	        	<div><span class="bold">Order Date: </span>{{doc.odPayObj.odDate | date:"dd MMM yyyy 'at' h:mma"}}</div>
+	            <div><span class="bold">Order Code: </span>odm1053{{doc.odCode}}</div>
+	            <div><span class="bold">Order Total: </span>{{doc.odTotal | currency:'RM':2}}</div>
+	            <div><span class="bold"> Order Status: </span>{{doc.odController.odStatus}}</div>
+	            <br>
+	            
+	        </div>
+	        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+	        	<div class="bold">Items ordered</div>
+	            <div ng-repeat="item in doc.odCart">{{$index+1}}) {{item.name}} Qty: {{item.qty}}</div>
+	        </div>
+	    </li>
+	</ul> -->
+    <table class="table table-bordered table-responsive white custom-text12">
+        <tr class="bold">
+            <td class="text-center">ORDER NO.</td>
+            <td class="text-center">DATE</td>
+            <td class="text-center">TOTAL</td>
+            <td class="text-center">STATUS</td>
+        </tr>
+        <tr ng-repeat="doc in history | orderBy:'odCreationDate':true">
+            <td class="text-center"><a ui-sref="orderHistoryDetail({orderId:doc._id})"><span>odm1023</span> <span> {{doc.odCode}}</span></a></td>
+            <td class="text-center">{{doc.odCreationDate | date:"dd MMM yyyy 'at' h:mma"}}</td>
+            <td class="text-center">{{doc.odTotal | currency:'RM':2}}</td>
+            <td class="text-center">{{doc.controlObj.odStatus}}</td>
+        </tr>
+    </table>
+</div>

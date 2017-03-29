@@ -1,0 +1,26 @@
+map.html
+<!-- <div class="container" map-lazy-load="https://maps.google.com/maps/api/js">
+  <ng-map center="3.1197866999999997,101.578791" zoom="16"></ng-map>
+</div> -->
+<!-- <div class="container">
+    <ng-map default-style="true" center="current-location" zoom="18" map-type-id='MapTypeId.SATELLITE' class="map">
+        <marker position="current-location" title="Hello World!" on-click="test()">
+            <info-window position="current-location">
+                <span class="red bold">Your approximate location</span>
+            </info-window>
+        </marker>
+        <div ng-repeat="location in locations">
+            <marker position="{{location}}" title="Hello World!" on-click="test()" icon="http://www.21cart.com/favicon.ico"></marker>
+        </div>
+    </ng-map>
+</div> -->
+<div class="container">
+<ng-map center='current-position' geo-callback="vm.callbackFunc('you')" class="map">
+    <!-- <marker position="-25.363882,131.044922" title="Hello World!"></marker> -->
+    <!--         <marker position="current-location" title="Hello World!" on-click="test()">
+        </marker> -->
+    <div ng-repeat="location in locations">
+        <marker position="{{location}}" title="Hello World!" on-click="test()" icon="http://www.21cart.com/favicon.ico"></marker>
+    </div>
+</ng-map>
+</div>

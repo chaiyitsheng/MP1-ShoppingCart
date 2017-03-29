@@ -1,0 +1,29 @@
+<br>
+<br>
+<div class="row animated fadeIn">
+    <div class="col-lg-4 col-md-4 col-sm-3 col-xs-1"></div>
+    <form ng-submit="submit()" name="register" class="form-signin col-lg-4 col-md-4 col-sm-6 col-xs-10 panel panel-default" novalidate>
+        <br>
+        <h4 class="form-signin-heading text-center Museo-500">LOGIN</h4>
+        <br>
+        <p class="red text-center animated bounceIn" ng-hide="!loginErr">{{loginErr}}</p>
+        <!-- <label>Email Address:</label> -->
+        <input placeholder="Email Address" name="email" ng-model="user.email" type="email" class="form-control" required>
+        <p class="help-block" ng-show="register.email.$dirty && register.email.$invalid">Please enter a valid Email</p>
+        <br>
+        <!-- <label>Password:</label> -->
+        <input placeholder="Password" name="password" ng-model="user.password" type="password" class="form-control" required>
+        <br>
+        <br>
+        <button ng-disabled="register.$invalid" ng-class="{buttonActive:!register.$invalid}" class="btn btn-block btn-customRed " type="submit">
+            Submit
+        </button>
+        <br>
+        <br>
+        <a class="text-muted pull-right" ui-sref="register">Create New Account</a>
+        <a class="text-muted pull-left" ui-sref="forgotPassword">Forgot Password</a>
+        <br>
+        <br>
+    </form>
+    <div class="col-lg-4 col-md-4 col-sm-3 col-xs-1"></div>
+</div>

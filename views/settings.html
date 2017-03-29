@@ -1,0 +1,48 @@
+<div class="text-center">
+  <h1>Settings</h1>
+  <small>Please login to view User settings & Order Information</small>
+</div>
+
+
+<div class="container-fluid animated fadeIn">
+    <div class="row text-center frame">
+        <div>
+            <a ng-show="isAuthenticated()" ui-sref="userProfile" class="btn btn-danger btn-lg cb" role="button"><span class="glyphicon glyphicon-user"></span><br>USER PROFILE</a>
+            <a ng-hide="isAuthenticated()" ui-sref="login" class="btn btn-danger btn-lg cb" role="button"><span class="glyphicon glyphicon-star-empty"></span><br>LOGIN / REGISTER</a>
+            <a ng-show="isAuthenticated()" ui-sref="logout" class="btn btn-danger btn-lg cb" role="button"><span class="glyphicon glyphicon-bookmark"></span><br>LOGOUT</a>
+            <a ui-sref="orderHistory" class="btn btn-danger btn-lg cb" role="button"><span class="glyphicon glyphicon-bookmark"></span><br>ORDER HISTORY</a>
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+.bbb {
+    /*height:400px;*/
+    /*background-image: url("http://www.21cart.com/main.png");   */
+}
+
+.frame {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.cb {
+    white-space: normal;
+    opacity: 0.7;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 120px;
+    height: 120px;
+    padding-top: 25px;
+    border-radius: 10px;
+}
+
+.cb span {
+    font-size: 40px;
+}
+</style>

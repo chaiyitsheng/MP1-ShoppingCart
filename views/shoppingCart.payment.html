@@ -1,0 +1,106 @@
+<div class="container animated fadeIn" ng-hide="cartCount()==0">
+    <br>
+    <div class="text-center Museo-500" style="font-size:25px">REVIEW ORDER</div>
+    <div class="text-center" style="">Step 3 of 4</div>
+    <br>
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+            You may pay using Visa, MasterCard or Bank Transfer via our payment partner eGHL.
+            <br>
+            Click on Place Order Button to place order and proceed to payment.  
+ <!--            <div class="list-group">
+                <div class="list-group-item">
+                    <form class="" action="">
+                        <div class="text-left">
+                            <br>
+                            <div>
+                                <label class="bold">Please select payment method</label>
+                                <br>
+                                <br>
+                                <div class="text-muted">
+                                    <input type="radio" ng-model="payObj.odPayMethod" value="Visa" ng-disabled="payButtonPressed"> <img class="" src="{{url}}visa-curved-64px.png" height="30"> <span class="bold">Visa</span>
+                                </div>
+                                <br/>
+                                <div class="text-muted">
+                                    <input type="radio" ng-model="payObj.odPayMethod" value="Mastercard" ng-disabled="payButtonPressed"> <img class="" src="{{url}}mastercard-curved-64px.png" height="30"> <span class="bold">Master Card</span>
+                                </div>
+                                <br/>
+                                <div class="text-muted">
+                                    <input ng-disabled='true' type="radio" ng-model="payObj.odPayMethod" value="Amex"> <img class="img-muted" src="{{url}}american-express-curved-64px.png" height="30"> <span class="bold">American Express</span><span>(coming soon)</span>
+                                </div>
+                                <br/>
+                                <div class="text-muted">
+                                    <input type="radio" ng-model="payObj.odPayMethod" value="Direct Bank In" ng-disabled="payButtonPressed"> <span class="bold">Direct Bank-In</span>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="well white" ng-show='payObj.odPayMethod && payObj.odPayMethod!=="Direct Bank In"' >
+                                {{payObj.odExpirationDateMonth+"/"+payObj.odExpirationDateYear}}
+                                {{payObj.odExpirationDateMonth}}
+                                {{payObj.odExpirationDateYear}}
+                                {{payObj.odExpirationDate}}
+                                <label>Please enter Credit Card Number</label>
+                                <input type="number" class="form-control radio" ng-model="payObj.odCardNumber" ng-disabled="payButtonPressed">
+                                <label>Please enter Card Expiration Date (MM-YY)</label>
+                                <input type="number" class="form-control radio" ng-model="payObj.odExpirationDateMonth" ng-disabled="payButtonPressed" placeholder="Month (1-12 only)" min="1" max="12">
+                                <input type="number" class="form-control radio" ng-model="payObj.odExpirationDateYear" ng-disabled="payButtonPressed" placeholder="Year (15-25 only)" min="15" max="25">
+                                <label>Please enter CVV Code</label>
+                                <input type="number" class="form-control radio" ng-model="payObj.odCVV" ng-disabled="payButtonPressed" min>
+                            </div>
+                            <br>
+                            <div class="well white" ng-show='payObj.odPayMethod && payObj.odPayMethod=="Direct Bank In"'>
+                                <div><span class="bold">1)</span> Please bank in after placing the order to:</div>
+                                <br>
+                                <div>Payee Bank: <img src="{{url}}PBBlogo.png" height="30"></div>
+                                <div>Payee Name: 21CART SDN BHD </div>
+                                <div> A/C No: 3195641912</div>
+                                <br>
+                                <div><span class="bold">2)</span> Email the <span class="bold">&nbsp;a)</span> bank in slip and <span class="bold">&nbsp;b)</span> order number to hello@21cart.com</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div> -->
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="list-group" ng-hide="cartCount()==0">
+                <div class="list-group-item text-center">
+                    <div class="bold spacing10">YOUR ORDER</div>
+                    <div class="div-underline spacing5"></div>
+                    <div class="row spacing5">
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6"></span>
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right bold">(RM)</span>
+                    </div>
+                    <div class="row spacing5">
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">Original Price:</span>
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right"> {{cartTotalRetail()| number : 2}}</span>
+                    </div>
+                    <div class="row spacing20 bold600">
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left red">You Save: </span>
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right red"> -{{cartSavings()| number:2}}</span>
+                    </div>
+                    <div class="row spacing5">
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">Sub Total:</span>
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right"> {{cartTotalSelling()| number : 2}}</span>
+                    </div>
+                    <div class="row spacing5">
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left bold">Shipping Cost:</span>
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right bold"> {{shippingInfo.cost| number : 2}}</span>
+                    </div>
+                    <div class="row spacing10">
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">GST@6%</span>
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right"> -</span>
+                    </div>
+                    <div class="div-underline spacing10"></div>
+                    <div class="row spacing5">
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left bold">TOTAL:</span>
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right bold">{{cartTotalSelling()+ shippingInfo.cost| currency : 'RM ' : 2}}</span>
+                    </div>
+                    <br>
+                    <span us-spinner="{radius:30, width:8, length: 16,color: '#D32F2F'}" spinner-key="spinner-1" ></span>
+                    <div class="btn btn-success" ng-click="confirmOrder()">Review Order Details</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

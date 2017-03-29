@@ -1,0 +1,224 @@
+<div class="container animated fadeIn">
+    <br>
+    <div class="">
+        <div class="">
+            <div class="text-center Museo-500" style="font-size:25px">CONFIRM DETAILS</div>
+            <div class="text-center" style="">Step 2 of 4</div>
+            <br>
+            <div class="text-center">Your username: {{user.email}}</div>
+            <br>
+            <form name="userProfile" autocomplete="off" class="userProfileForm form-horizontal" ng-submit="userProfile.$valid && updateUserInfo()" novalidate>
+                <div class="well show1 white">
+                    <div class="text-center bold red"> 1. PERSONAL INFORMATION</div>
+                    <br>
+                    <!--                     <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Testing</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                        </div>
+                    </div> -->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Last Name</label>
+                        <div class="validation-orange" ng-show="userProfile.uuLastName.$error.required"> *Required Field</div>
+                        <div class="validation-red" ng-show="userProfile.uuLastName.$invalid && userProfile.uuLastName.$dirty"> *Invalid Data: Please enter between 1-40 alphabets or symbols . , and ' only</div>
+                        <div class="col-sm-10">
+                            <div class="col-sm-10"></div>
+                            <input name="uuLastName" type="text" class="form-control form-control-custom" placeholder="Enter Last Name" ng-model="user.uuLastName" ng-required="true" ng-pattern="/^[a-zA-Z\s.,']{1,40}$/">
+                        </div>
+                        <!-- <div ng-show="userProfile.uuLastName.$valid" class="red">ok</div> -->
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">First Name</label>
+                        <div class="validation-orange" ng-show="userProfile.uuFirstName.$error.required"> *Required Field</div>
+                        <div class="validation-red" ng-show="userProfile.uuFirstName.$invalid && userProfile.uuFirstName.$dirty"> *Invalid Data: Please enter between 1-40 alphabets or symbols . , and ' only</div>
+                        <div class="col-sm-10">
+                            <input name="uuFirstName" type="text" class="form-control form-control-custom" placeholder="Enter First Name" ng-model="user.uuFirstName" ng-required="true" ng-pattern="/^[a-zA-Z\s.,']{1,40}$/">
+                        </div>
+                        <!-- <div ng-show="userProfile.uuFirstName.$valid" class="red">ok</div> -->
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Gender</label>
+                        <div class="validation-orange" ng-show="userProfile.uuGender.$error.required"> *Required Field</div>
+                        <div class="col-sm-10">
+                            <select name="uuGender" class="form-control form-control-custom" ng-model="user.uuGender" ng-required="true">
+                                <option value="female">Female</option>
+                                <option value="male">Male</option>
+                            </select>
+                        </div>
+                        <!-- <div ng-show="userProfile.uuGender.$valid" class="red">ok</div> -->
+                    </div>
+                    <!--                 <label class="text-muted">Date of Birth</label>
+                <div class="validation-orange" ng-show="userProfile.uuDob.$error.required"> *Required Field</div>
+                <div class="input-group">
+                                           <input name="uuDob" type="text" class="form-control" datepicker-popup="{{format}}" ng-model="user.uuDob" is-open="opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" close-text="Close" />
+                        <span class="input-group-btn"><button  type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button></span>
+                </div> -->
+                    <!-- <div ng-show="userProfile.uuDob.$valid" class="red">ok</div> -->
+                    <br>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Identity Card No / Passport No</label>
+                        <div class="validation-orange" ng-show="userProfile.uuIcNo.$error.required"> *Required Field</div>
+                        <div class="validation-red" ng-show="userProfile.uuIcNo.$invalid && userProfile.uuIcNo.$dirty"> *Invalid Data: Please enter up to 30 alphanumeric characters only</div>
+                        <div class="col-sm-10">
+                            <input name="uuIcNo" type="text" class="form-control form-control-custom" placeholder="Enter Identity Card No / Passport No" ng-model="user.uuIcNo" ng-required="true" ng-pattern="/^[a-zA-Z0-9\s]{1,30}$/">
+                        </div>
+                        <!-- <div ng-show="userProfile.uuIcNo.$valid" class="red">ok</div> -->
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Home Telephone Number</label>
+                        <div class="validation-red" ng-show="userProfile.uuHomeTelNo.$invalid && userProfile.uuHomeTelNo.$dirty"> *Invalid Data: Please enter up to 10 numeric characters only</div>
+                        <div class="col-sm-10">
+                            <input name="uuHomeTelNo" type="text" class="form-control form-control-custom" placeholder="Enter Area Code and Telephone No." ng-model="user.uuHomeTelNo" ng-pattern="/^[0-9]{1,10}$/">
+                        </div>
+                        <!-- <div ng-show="userProfile.uuHomeTelNo.$valid" class="red">ok</div> -->
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Mobile Telephone Number</label>
+                        <div class="validation-orange" ng-show="userProfile.uuMobileTelNo.$error.required"> *Required Field</div>
+                        <div class="validation-red" ng-show="userProfile.uuMobileTelNo.$invalid && userProfile.uuMobileTelNo.$dirty"> *Invalid Data: Please enter up to 10 numeric characters only</div>
+                        <div class="col-sm-10">
+                            <input name="uuMobileTelNo" type="text" class="form-control form-control-custom" placeholder="Enter Mobile Telephone Number" ng-model="user.uuMobileTelNo" ng-required="true" ng-pattern="/^[0-9]{1,10}$/">
+                        </div>
+                        <!-- <div ng-show="userProfile.uuMobileTelNo.$valid" class="red">ok</div> -->
+                    </div>
+                </div>
+                <div class="well show1 white">
+                    <div class="text-center bold red">2. HOME ADDRESS</div>
+                    <br>
+                    <!--                     <div class="form-group">
+                        <label class="col-sm-2 control-label">Preview</label>
+                        <div class="col-sm-10">
+                            <div class="form-control">{{user.uuAdd1}}</div>
+                            <div class="form-control">{{user.uuAdd2}}</div>
+                            <div class="form-control">{{user.uuPostcode}}</div>
+                            <div class="form-control">{{user.uuTowncity}}</div>
+                            <div class="form-control">{{user.uuState}}</div>
+                        </div>
+                    </div> -->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Address</label>
+                        <div class="validation-orange" ng-show="userProfile.uuAdd1.$error.required || userProfile.uuAdd2.$error.required"> *Required Field: At least 2 lines</div>
+                        <div class="validation-red" ng-show="userProfile.uuAdd1.$invalid && userProfile.uuAdd1.$dirty"> *For each line: Please enter up to 60 characters only</div>
+                        <div class="col-sm-10">
+                            <input name="uuAdd1" type="text" class="form-control form-control-custom" placeholder="Enter Address Line 1" ng-model="user.uuAdd1" ng-required="true" ng-pattern="/^.{1,60}$/">
+                        </div>
+                        <label class="col-sm-2 control-label"></label>
+                        <div class="col-sm-10">
+                            <input name="uuAdd2" type="text" class="form-control form-control-custom" placeholder="Enter Address Line 2" ng-model="user.uuAdd2" ng-required="true" ng-pattern="/^.{1,60}$/">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Town/City</label>
+                        <div class="validation-orange" ng-show="userProfile.uuTowncity.$error.required"> *Required Field</div>
+                        <div class="validation-red" ng-show="userProfile.uuTowncity.$invalid && userProfile.uuTowncity.$dirty"> *Invalid Data: Please enter between 1-40 alphabets only</div>
+                        <div class="col-sm-10">
+                            <input name="uuTowncity" type="text" class="form-control form-control-custom" placeholder="Enter Town/City" ng-model="user.uuTowncity" ng-required="true" ng-pattern="/^[a-zA-Z\s]{1,40}$/">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Postcode</label>
+                        <div class="validation-orange" ng-show="userProfile.uuPostcode.$error.required"> *Required Field</div>
+                        <div class="validation-red" ng-show="userProfile.uuPostcode.$invalid && userProfile.uuPostcode.$dirty"> *Invalid Data: Please enter 6 numbers only</div>
+                        <div class="col-sm-10">
+                            <input name="uuPostcode" type="text" class="form-control form-control-custom" placeholder="Enter Postcode" ng-model="user.uuPostcode" ng-required="true" ng-pattern="/^[0-9\s]{1,6}$/">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">State</label>
+                        <div class="validation-orange" ng-show="userProfile.uuState.$error.required"> *Required Field</div>
+                        <div class="col-sm-10">
+                            <select name="uuState" class="form-control form-control-custom" ng-model="user.uuState" ng-required="true">
+                                <option value="Wilayah Persekutuan Kuala Lumpur">Wilayah Persekutuan Kuala Lumpur</option>
+                                <option value="Wilayah Persekutuan Labuan">Wilayah Persekutuan Labuan</option>
+                                <option value="Wilayah Persekutuan Putrajaya">Wilayah Persekutuan Putrajaya</option>
+                                <option value="Selangor">Selangor</option>
+                                <option value="Pulau Pinang">Pulau Pinang</option>
+                                <option value="Perak">Perak</option>
+                                <option value="Johor">Johor</option>
+                                <option value="Melaka">Melaka</option>
+                                <option value="Negeri Sembilan">Negeri Sembilan</option>
+                                <option value="Perlis">Perlis</option>
+                                <option value="Kedah">Kedah</option>
+                                <option value="Kelantan">Kelantan</option>
+                                <option value="Terengganu">Terengganu</option>
+                                <option value="Pahang">Pahang</option>
+                                <option value="Sabah">Sabah</option>
+                                <option value="Sarawak">Sarawak</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="well show1 white">
+                    <div class="text-center bold red">3. SHIPPING ADDRESS</div>
+                    <br>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Address</label>
+                        <div class="validation-orange" ng-show="userProfile.uuShipAdd1.$error.required || userProfile.uuShipAdd2.$error.required"> *Required Field: At least 2 lines</div>
+                        <div class="validation-red" ng-show="userProfile.uuShipAdd1.$invalid && userProfile.uuShipAdd1.$dirty"> *For each line: Please enter up to 60 characters only</div>
+                        <div class="col-sm-10">
+                            <input name="uuShipAdd1" type="text" class="form-control form-control-custom" placeholder="Enter Address Line 1" ng-model="user.uuShipAdd1" ng-required="true" ng-pattern="/^.{1,60}$/">
+                        </div>
+                        <label class="col-sm-2 control-label"></label>
+                        <div class="col-sm-10">
+                            <input name="uuShipAdd2" type="text" class="form-control form-control-custom" placeholder="Enter Address Line 2" ng-model="user.uuShipAdd2" ng-required="true" ng-pattern="/^.{1,60}$/">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Town/City</label>
+                        <div class="validation-orange" ng-show="userProfile.uuShipTowncity.$error.required"> *Required Field</div>
+                        <div class="validation-red" ng-show="userProfile.uuShipTowncity.$invalid && userProfile.uuShipTowncity.$dirty"> *Invalid Data: Please enter between 1-40 alphabets only</div>
+                        <div class="col-sm-10">
+                            <input name="uuShipTowncity" type="text" class="form-control form-control-custom" placeholder="Enter Town/City" ng-model="user.uuShipTowncity" ng-required="true" ng-pattern="/^[a-zA-Z\s]{1,40}$/">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Postcode</label>
+                        <div class="validation-orange" ng-show="userProfile.uuShipPostcode.$error.required"> *Required Field</div>
+                        <div class="validation-red" ng-show="userProfile.uuShipPostcode.$invalid && userProfile.uuShipPostcode.$dirty"> *Invalid Data: Please enter 6 numbers only</div>
+                        <div class="col-sm-10">
+                            <input name="uuShipPostcode" type="text" class="form-control form-control-custom" placeholder="Enter Postcode" ng-model="user.uuShipPostcode" ng-required="true" ng-pattern="/^[0-9\s]{1,6}$/">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">State</label>
+                        <div class="validation-orange" ng-show="userProfile.uuShipState.$error.required"> *Required Field</div>
+                        <div class="col-sm-10">
+                            <select name="uuShipState" class="form-control form-control-custom" ng-model="user.uuShipState" ng-required="true">
+                                <option value="Wilayah Persekutuan Kuala Lumpur">Wilayah Persekutuan Kuala Lumpur</option>
+                                <option value="Wilayah Persekutuan Labuan">Wilayah Persekutuan Labuan</option>
+                                <option value="Wilayah Persekutuan Putrajaya">Wilayah Persekutuan Putrajaya</option>
+                                <option value="Selangor">Selangor</option>
+                                <option value="Pulau Pinang">Pulau Pinang</option>
+                                <option value="Perak">Perak</option>
+                                <option value="Johor">Johor</option>
+                                <option value="Melaka">Melaka</option>
+                                <option value="Negeri Sembilan">Negeri Sembilan</option>
+                                <option value="Perlis">Perlis</option>
+                                <option value="Kedah">Kedah</option>
+                                <option value="Kelantan">Kelantan</option>
+                                <option value="Terengganu">Terengganu</option>
+                                <option value="Pahang">Pahang</option>
+                                <option value="Sabah">Sabah</option>
+                                <option value="Sarawak">Sarawak</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Preview</label>
+                        <div class="col-sm-10">
+                            <div class="form-control alert-success">{{user.uuShipAdd1}}</div>
+                            <div class="form-control alert-success">{{user.uuShipAdd2}}</div>
+                            <div class="form-control alert-success">{{user.uuShipPostcode}} {{user.uuShipTowncity}}</div>
+                            <div class="form-control alert-success">{{user.uuShipState}}</div>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-success" value="Save Profile">
+                <div class="validation-red" ng-show="userProfile.$invalid && userProfile.$dirty"> Please ensure all data is valid before submitting form</div>
+                <br>
+                <br>
+            </form>
+        </div>
+    </div>
+</div>
+<br>

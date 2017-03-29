@@ -1,0 +1,32 @@
+<!-- <div class="">
+    <h4 class="text-center Museo-500">Shopping Cart</h4>
+    <div class="list-group" ng-hide="cartCount()==0">
+        <div class="list-group-item text-center">
+            <div style="display:inline">Total:</div>
+            <h3 class="red" style="display:inline">{{cartTotal()| currency : 'RM ' : 2}}</h3>
+            <br>
+            <br>
+            <div class="redBackground btn btn-danger" ui-sref="checkOut">CheckOut</div>
+        </div>
+    </div>
+    <div class="text-center Museo-500" ng-show="cartCount()==0">Your Shopping Cart is Empty</div>
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="item in cart()">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+                    <img class="img-thumbnail img-responsive img-circle noPad" ng-src='{{url}}{{item.image}}' width="90">
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-6 text-left">
+                    <h5 class="bold red">{{item.name}}</h5>
+                    <div class="form-inline">
+                        <label>Price: {{item.price | currency : 'RM ' : 2}} X</label>
+                        <input ng-change="cartCount()" type="number" class="form-control" ng-model="item.qty" min="1" max="10" ng-model-options="{ updateOn: 'blur' }"> Unit(s)
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2" style="margin-top:30px">
+                    <div class="btn btn-danger" ng-click="remove($index)"><i class="glyphicon glyphicon-remove"></i></div>
+                </div>
+        </li>
+    </ul>
+    </div> -->
+    <ui-view></ui-view>

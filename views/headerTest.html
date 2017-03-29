@@ -1,0 +1,126 @@
+<div class="container-fluid cyHeader" sticky>
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left" href="">
+            <i class="cyHeaderIcon glyphicon glyphicon-menu-hamburger" ng-click="toggle1()"></i>
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-4 col-xs-2 text-left" href="">
+            <i class="cyHeaderIcon glyphicon glyphicon-search" ng-click="toggleSearch()"></i>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 text-center" ui-sref="shoppingCart.view">
+            <i class="cyHeaderIcon glyphicon glyphicon-shopping-cart"></i>&nbsp;<span ng-controller="ShoppingCartCtrl" class="cartCounter badge">{{cartCount()}}</span>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 text-right" href="">
+            <i class="cyHeaderIcon glyphicon glyphicon-cog" ng-click="toggle2()"></i>
+        </div>
+    </div>
+</div>
+<div pageslide ps-speed="0" ps-open="checked1" ps-side="left" class="pageSlide-left noPad">
+    <ul class="noPad">
+        <li class="pageSlide-left-header" ng-click="toggle1()">
+            <img class="" src="" alt="" height="60" width="60" style="visibility:hidden">
+            <i class="pull-right pageSlide-left-close-icon glyphicon glyphicon-remove"></i>
+        </li>
+        <li ng-click="toggle1()" ui-sref="home" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-star-empty"></i><span>HOME</span></span>
+        </li>
+        <li ng-click="toggle1()" ui-sref="product({category:'fashion',pageState:'FASHION'})" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-star-empty"></i><span>FASHION</span></span>
+        </li>
+        <li ng-click="toggle1()" ui-sref="product({category:'petsToys',pageState:'PETS & TOYS'})" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-star-empty"></i><span>PETS & TOYS</span></span>
+        </li>
+        <li ng-click="toggle1()" ui-sref="product({category:'homeLiving',pageState:'HOME & LIVING'})" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-star-empty"></i><span>HOME & LIVING</span></span>
+        </li>
+        <li ng-click="toggle1()" ui-sref="product({category:'gadgetAccessories',pageState:'GADGET & ACCESSORIES'})" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-star-empty"></i><span>GADGET & ACCESSORIES</span></span>
+        </li>
+        <!--         <li ng-click="toggle1()" ui-sref="product({category:'babiesToys',pageState:'BABIES & TOYS'})" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-star-empty"></i><span>BABIES & TOYS</span></span>
+        </li>
+        <li ng-click="toggle1()" ui-sref="product({category:'beautyWellness',pageState:'BEAUTY & WELLNESS'})" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-star-empty"></i><span>BEAUTY & WELLNESS</span></span>
+        </li>
+        <li ng-click="toggle1()" ui-sref="product({category:'entertainment',pageState:'ENTERTAINMENT'})" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-star-empty"></i><span>ENTERTAINMENT</span></span>
+        </li>
+        <li ng-click="toggle1()" ui-sref="product({category:'fitnessHealth',pageState:'FITNESS & HEALTH'})" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-star-empty"></i><span>FITNESS & HEALTH</span></span>
+        </li>
+        <li ng-click="toggle1()" ui-sref="product({category:'gadgetIT',pageState:'GADGETS & IT ACCESSORIES'})" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-star-empty"></i><span>GADGETS & IT ACCESSORIES</span></span>
+        </li>
+        <li ng-click="toggle1()" ui-sref="product({category:'homeApplicances',pageState:'HOME APPLIANCES'})" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-star-empty"></i><span>HOME APPLIANCES</span></span>
+        </li>
+        <li ng-click="toggle1()" ui-sref="product({category:'restaurants',pageState:'RESTAURANT,CAFES & BARS'})" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-star-empty"></i><span>RESTAURANTS,CAFES & BARS</span></span>
+        </li>
+        <li ng-click="toggle1()" ui-sref="product({category:'travelLeisure',pageState:'TRAVEL & LEISURE'})" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-star-empty"></i><span>TRAVEL & LEISURE</span></span>
+        </li> -->
+    </ul>
+</div>
+<div pageslide="" ps-speed="0" ps-open="checked2" class="pageSlide-right">
+    <ul class="noPad">
+        <li class="pageSlide-right-header" ng-click="toggle2()">
+            <i class="pageSlide-right-close-icon glyphicon glyphicon-remove"></i>
+            <img class="pull-right" src="" alt="" height="60" width="60" style="visibility:hidden">
+        </li>
+        <li ng-show="isAuthenticated()" ng-click="toggle2()" ui-sref="userProfile" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-user"></i><span> USER PROFILE</span></span>
+            <li ng-hide="isAuthenticated()" ng-click="login()"><span><i class="glyphicon glyphicon-star-empty"></i><span> LOGIN / REGISTER</span></span>
+            </li>
+            <li ng-show="isAuthenticated()" ng-click="logout()"><span><i class="glyphicon glyphicon-star-empty"></i><span> LOGOUT</span></span>
+            </li>
+            <li ng-click="toggle2()" ui-sref="orderHistory"><span><i class="glyphicon glyphicon-star-empty"></i><span> ORDER HISTORY</span></span>
+            </li>
+            <!--             <li ng-click="coupons()"><span><i class="glyphicon glyphicon-star-empty"></i><span> SETTINGS</span></span>
+            </li> -->
+    </ul>
+</div>
+<!-- Sticky Division -->
+<!-- <div class="cyHeader" sticky ng-show="stick>=769">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-7 col-xs-5 text-left" href="">
+            <i class="cyHeaderIcon glyphicon glyphicon-menu-hamburger" ng-click="toggle1()"></i>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 text-center" ui-sref="shoppingCart.view">
+            <i class="cyHeaderIcon glyphicon glyphicon-shopping-cart"></i>&nbsp;<span ng-controller="ShoppingCartCtrl" class="cartCounter badge">{{cartCount()}}</span>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 text-right" href="">
+            <i class="cyHeaderIcon glyphicon glyphicon-cog" ng-click="toggle2()"></i>
+        </div>
+    </div>
+</div>
+<div pageslide ps-speed="0" ps-open="checked1" class="pageSlide-left">
+    <ul class="noPad">
+        <li class="pageSlide-left-header" ng-click="toggle1()">
+            <img class="" src="" alt="" height="60" width="60" style="visibility:hidden">
+            <i class="pull-right pageSlide-left-close-icon glyphicon glyphicon-remove"></i>
+        </li>
+        <li ng-click="toggle1()" ui-sref="main" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-star-empty"></i><span>MAIN</span></span>
+        </li>
+        <li ng-click="toggle1()" ui-sref="product({category:'apparels',pageState:'APPARELS'})" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-star-empty"></i><span>APPARELS</span></span>
+        </li>
+        <li ng-click="toggle1()" ui-sref="product({category:'babiesToys',pageState:'BABIES & TOYS'})" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-star-empty"></i><span>BABIES & TOYS</span></span>
+        </li>
+        <li ng-click="toggle1()" ui-sref="product({category:'beautyWellness',pageState:'BEAUTY & WELLNESS'})" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-star-empty"></i><span>BEAUTY & WELLNESS</span></span>
+        </li>
+        <li ng-click="toggle1()" ui-sref="product({category:'entertainment',pageState:'ENTERTAINMENT'})" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-star-empty"></i><span>ENTERTAINMENT</span></span>
+        </li>
+        <li ng-click="toggle1()" ui-sref="product({category:'fitnessHealth',pageState:'FITNESS & HEALTH'})" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-star-empty"></i><span>FITNESS & HEALTH</span></span>
+        </li>
+        <li ng-click="toggle1()" ui-sref="product({category:'gadgetIT',pageState:'GADGETS & IT ACCESSORIES'})" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-star-empty"></i><span>GADGETS & IT ACCESSORIES</span></span>
+        </li>
+        <li ng-click="toggle1()" ui-sref="product({category:'homeApplicances',pageState:'HOME APPLIANCES'})" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-star-empty"></i><span>HOME APPLIANCES</span></span>
+        </li>
+        <li ng-click="toggle1()" ui-sref="product({category:'restaurants',pageState:'RESTAURANT,CAFES & BARS'})" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-star-empty"></i><span>RESTAURANTS,CAFES & BARS</span></span>
+        </li>
+        <li ng-click="toggle1()" ui-sref="product({category:'travelLeisure',pageState:'TRAVEL & LEISURE'})" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-star-empty"></i><span>TRAVEL & LEISURE</span></span>
+        </li>
+    </ul>
+</div>
+<div pageslide="" ps-speed="0" ps-open="checked2" class="pageSlide-right">
+    <ul class="noPad">
+        <li class="pageSlide-right-header" ng-click="toggle2()">
+            <i class="pageSlide-right-close-icon glyphicon glyphicon-remove"></i>
+            <img class="pull-right" src="" alt="" height="60" width="60" style="visibility:hidden">
+        </li>
+        <li ng-show="isAuthenticated()" ng-click="toggle2()" ui-sref="userProfile" ui-sref-opts="{reload:true}"><span><i class="glyphicon glyphicon-user"></i><span> USER PROFILE</span></span>
+            <li ng-hide="isAuthenticated()" ng-click="login()"><span><i class="glyphicon glyphicon-star-empty"></i><span> LOGIN/REGISTER</span></span>
+            </li>
+            <li ng-show="isAuthenticated()" ng-click="logout()"><span><i class="glyphicon glyphicon-star-empty"></i><span> LOGOUT</span></span>
+            </li>
+            <li ng-click="toggle2()" ui-sref="orderHistory"><span><i class="glyphicon glyphicon-star-empty"></i><span> ORDER HISTORY</span></span>
+            </li>
+            <li ng-click="coupons()"><span><i class="glyphicon glyphicon-star-empty"></i><span> SETTINGS</span></span>
+            </li>
+    </ul>
+</div> -->

@@ -1,0 +1,165 @@
+<nav class="navbar navbar-findcond" ng-controller="DropdownCtrl">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a class="navbar-brand" href="#">Findcond</a> -->
+            <img alt="" height="50" width="125" href="#/" src="http://www.21cart.com/21logoSmall.png">
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav navbar-right">
+                <!--                 <li class="dropdown" dropdown is-open="status.isopen">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categories <span class="caret" dropdown-toggle></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li ng-repeat="choice in items">
+                            <a ui-sref="route2">{{choice}}</a>
+                        </li>
+                    </ul>
+                </li> -->
+                <li class="dropdown" dropdown is-open="status.isopen">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">SHOP CATEGORIES<span class="caret" dropdown-toggle></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            <a ui-sref="product({category:'fashion',pageState:'FASHION'})">FASHION</a>
+                        </li>
+                        <li>
+                            <a ui-sref="product({category:'petsToys',pageState:'PETS & TOYS'})">PETS & TOYS</a>
+                        </li>
+                        <li>
+                            <a ui-sref="product({category:'homeLiving',pageState:'HOME & LIVING'})">HOME & LIVING</a>
+                        </li>
+                        <li>
+                            <a ui-sref="product({category:'gadgetAccessories',pageState:'GADGET & ACCESSORIES'})">GADGET & ACCESSORIES</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown" dropdown is-open="status.isopen">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">LOGIN <span class="caret" dropdown-toggle></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li ng-show="isAuthenticated()">
+                            <a ui-sref="userProfile">USER PROFILE</a>
+                        </li>
+                        <li ng-hide="isAuthenticated()">
+                            <a ui-sref="login">LOGIN</a>
+                        </li>
+                        <li ng-show="isAuthenticated()">
+                            <a ui-sref="orderHistory">ORDER HISTORY</a>
+                        </li>
+                        <li ng-show="isAuthenticated()">
+                            <a ui-sref="logout">LOGOUT</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="hidden-xs navbar-form navbar-right search-form" role="search">
+                <input type="text" class="form-control" placeholder="Search" />
+                <button class=" btn btn-danger"><i class="glyphicon glyphicon-search"></i></button>
+            </form>
+            <form class="form-inline nav-line visible-xs hidden-sm hidden-md hidden-lg navbar-form navbar-right search-form" role="search">
+                <div class="input-group custom-search-form">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <span class="input-group-btn">
+              <button class="btn btn-danger" type="button">
+              <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>
+<style>
+.navbar.navbar-findcond {
+    margin-bottom: 0px;
+    border-radius: 0px;
+}
+
+.custom-search-form {
+    margin-top: 5px;
+}
+
+.nav-line {
+    padding-top: 20px;
+    border-width: 3px 0px 0px 0px;
+    border-color: #ddd;
+    border-style: solid;
+}
+
+nav.navbar-findcond {
+    background: #fff;
+    border-color: #ccc;
+    box-shadow: 0 0 2px 0 #ccc;
+}
+
+nav.navbar-findcond a {
+    color: #D32F2F;
+}
+
+nav.navbar-findcond ul.navbar-nav a {
+    color: #D32F2F;
+    border-style: solid;
+    border-width: 0 0 2px 0;
+    border-color: #fff;
+}
+
+nav.navbar-findcond ul.navbar-nav a:hover,
+nav.navbar-findcond ul.navbar-nav a:visited,
+nav.navbar-findcond ul.navbar-nav a:focus,
+nav.navbar-findcond ul.navbar-nav a:active {
+    background: #fff;
+}
+
+nav.navbar-findcond ul.navbar-nav a:hover {
+    border-color: #f14444;
+}
+
+nav.navbar-findcond li.divider {
+    background: #ccc;
+}
+
+nav.navbar-findcond button.navbar-toggle {
+    background: #D32F2F;
+    border-radius: 2px;
+}
+
+nav.navbar-findcond button.navbar-toggle:hover {
+    background: #999;
+}
+
+nav.navbar-findcond button.navbar-toggle > span.icon-bar {
+    background: #fff;
+}
+
+nav.navbar-findcond ul.dropdown-menu {
+    border: 0;
+    background: #fff;
+    border-radius: 4px;
+    margin: 4px 0;
+    box-shadow: 0 0 4px 0 #ccc;
+}
+
+nav.navbar-findcond ul.dropdown-menu > li > a {
+    color: #444;
+}
+
+nav.navbar-findcond ul.dropdown-menu > li > a:hover {
+    background: #D32F2F;
+    color: #fff;
+}
+
+nav.navbar-findcond span.badge {
+    background: #D32F2F;
+    font-weight: normal;
+    font-size: 11px;
+    margin: 0 4px;
+}
+
+nav.navbar-findcond span.badge.new {
+    background: rgba(255, 0, 0, 0.8);
+    color: #fff;
+}
+</style>

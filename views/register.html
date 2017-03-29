@@ -1,0 +1,30 @@
+<br>
+<br>
+<div class="row animated fadeIn">
+    <div class="col-lg-4 col-md-4 col-sm-3 col-xs-1"></div>
+    <form ng-submit="submit()" name="register" class="form-signin col-lg-4 col-md-4 col-sm-6 col-xs-10 panel panel-default" novalidate>
+        <br>
+        <h4 class="form-signin-heading text-center Museo-500">REGISTER</h4>
+        <br>
+        <!-- <label>Email Address:</label> -->
+        <input placeholder="Email Address" name="email" ng-model="user.email" type="email" class="form-control" required>
+        <p class="help-block" ng-show="register.email.$dirty && register.email.$invalid">Please enter a valid Email</p>
+        <br>
+        <!-- <label>Password:</label> -->
+        <input placeholder="Password" name="password" ng-model="user.password" type="password" class="form-control"required>
+        <br>
+        <!-- <label ng-show="!register.password.$invalid">Confirm Password:</label> -->
+        <input placeholder="Confirm Password" name="password_confirm" ng-show="!register.password.$invalid" ng-model="user.password_confirm" type="password" class="form-control" validate-equals='user.password'>
+        <p class="help-block" ng-show="register.password_confirm.$dirty && register.password_confirm.$invalid">Please match the passwords</p>
+        <br>
+        <button ng-disabled="register.$invalid" ng-class="{buttonActive:!register.$invalid}" class="btn btn-block btn-customRed" type="submit">
+            Submit
+        </button>
+        <br>
+        <br>
+        <a class="text-muted pull-right" ui-sref="login">Login here</a>
+        <br>
+        <br>
+    </form>
+    <div class="col-md-3"></div>
+</div>

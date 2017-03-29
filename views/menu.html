@@ -1,0 +1,64 @@
+<div class="text-center">
+  <h1>Menu</h1>
+  <small>Shop Categories</small>
+</div>
+
+
+<div class="container-fluid animated fadeIn">
+    <div class="row text-center frame visible-lg visible-md visible-sm">
+        <div>
+            <a ui-sref="product({category:'fashion',pageState:'FASHION'})" class="btn btn-danger btn-lg cb" role="button"><span class="glyphicon glyphicon-home"></span><br>Home</a>
+            <a ui-sref="product({category:'fashion',pageState:'FASHION'})" class="btn btn-danger btn-lg cb" role="button"><span class="glyphicon glyphicon-star-empty"></span><br>Crazy Deals!</a>
+            <a ui-sref="product({category:'fashion',pageState:'FASHION'})" class="btn btn-danger btn-lg cb" role="button"><span class="glyphicon glyphicon-bookmark"></span><br>Fashion</a>
+        </div>
+        <div>
+            <a ui-sref="product({category:'petsToys',pageState:'PETS & TOYS'})" class="btn btn-danger btn-lg cb" role="button"><span class="glyphicon glyphicon-signal"></span><br>Pets & Toys</a>
+            <a ui-sref="product({category:'homeLiving',pageState:'HOME & LIVING'})" class="btn btn-danger btn-lg cb" role="button"><span class="glyphicon glyphicon-comment"></span><br>Home & Living</a>
+            <a ui-sref="product({category:'gadgetAccessories',pageState:'GADGET & ACCESSORIES'})" class="btn btn-danger btn-lg cb" role="button"><span class="glyphicon glyphicon-comment"></span><br>Gadget & Accessories</a>
+        </div>
+    </div>
+<div class="row text-center frame visible-xs">
+    <div>
+        <a ui-sref="product({category:'fashion',pageState:'FASHION'})" class="btn btn-danger btn-lg cb" role="button"><span class="glyphicon glyphicon-home"></span><br>Home</a>
+        <a ui-sref="product({category:'fashion',pageState:'FASHION'})" class="btn btn-danger btn-lg cb" role="button"><span class="glyphicon glyphicon-star-empty"></span><br>Crazy Deals!</a>
+    </div>
+    <div>
+        <a ui-sref="product({category:'fashion',pageState:'FASHION'})" class="btn btn-danger btn-lg cb" role="button"><span class="glyphicon glyphicon-bookmark"></span><br>Fashion</a>
+        <a ui-sref="product({category:'petsToys',pageState:'PETS & TOYS'})" class="btn btn-danger btn-lg cb" role="button"><span class="glyphicon glyphicon-signal"></span><br>Pets & Toys</a>
+    </div>
+    <div>
+        <a ui-sref="product({category:'homeLiving',pageState:'HOME & LIVING'})" class="btn btn-danger btn-lg cb" role="button"><span class="glyphicon glyphicon-comment"></span><br>Home & Living</a>
+        <a ui-sref="product({category:'gadgetAccessories',pageState:'GADGET & ACCESSORIES'})" class="btn btn-danger btn-lg cb" role="button"><span class="glyphicon glyphicon-comment"></span><br>Gadget & Accessories</a>
+    </div>
+</div>
+</div>
+
+<style>
+.bbb {
+    /*height:400px;*/
+    /*background-image: url("http://www.21cart.com/main.png");   */
+}
+
+.frame {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.cb {
+    white-space: normal;
+    opacity: 0.7;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 120px;
+    height: 120px;
+    padding-top: 25px;
+    border-radius: 10px;
+}
+
+.cb span {
+    font-size: 40px;
+}
+</style>

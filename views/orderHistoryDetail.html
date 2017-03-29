@@ -1,0 +1,174 @@
+<div class="container animated fadeIn">
+    <br>
+    <div class="row text-center Museo-500" style="font-size:25px">ORDER DETAILS</div>
+    <br>
+    <div class="row">
+        <div class="col-sm-6 col-sm-push-6 custom-text12">
+            <div class="list-group">
+                <div class="list-group-item text-center">
+                    <div class="bold spacing10">ORDER NO: odm1023{{OrderSuccessDataObject.odCode}}</div>
+                    <!--                     <div class="div-underline spacing5"></div>
+                    <div class="row spacing5">
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">Order Number:</span>
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">odm1023{{OrderSuccessDataObject.odCode}}</span>
+                    </div> -->
+                    <div class="div-underline spacing5"></div>
+                    <div class="row spacing5">
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6"></span>
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right bold">(RM)</span>
+                    </div>
+                    <!--                     <div class="row spacing5">
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">Original Price:</span>
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right"> OrderSuccessDataObject</span>
+                    </div>
+                    <div class="row spacing15 bold600">
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left red">You Save: </span>
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right red"> 2.00</span>
+                    </div> -->
+                    <div class="row spacing5">
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left bold">Order Total:</span>
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right"> {{OrderSuccessDataObject.odCartTotalAmount|number:2}}</span>
+                    </div>
+                    <div class="row spacing5">
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left bold">Shipping:</span>
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right"> {{OrderSuccessDataObject.odShip.odCost|number:2}}</span>
+                    </div>
+                    <!--                     <div class="row spacing10">
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left">GST@6%</span>
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right"> 2.00</span>
+                    </div> -->
+                    <div class="div-underline spacing10"></div>
+                    <div class="row">
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left bold">TOTAL:</span>
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right bold">{{OrderSuccessDataObject.odTotal|number:2}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-sm-pull-6 custom-text12">
+            <div class="list-group ">
+                <div class="list-group-item text-center ">
+                    <div class="bold spacing10">SHIPPING DETAILS</div>
+                    <div class="div-underline spacing10"></div>
+                    <div class="row spacing10">
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left bold">Receipient's Name:</span>
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">{{OrderSuccessDataObject.odUser.infoObj.uuFirstName}}</span>
+                    </div>
+                    <div class="div-underline spacing10"></div>
+                    <div class="row spacing10">
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left bold">Address:</span>
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right"> {{OrderSuccessDataObject.odUser.infoObj.uuShipAdd1}},{{OrderSuccessDataObject.odUser.infoObj.uuShipAdd2}},{{OrderSuccessDataObject.odUser.infoObj.uuShipTowncity}},{{OrderSuccessDataObject.odUser.infoObj.uuShipPostcode}},{{OrderSuccessDataObject.odUser.infoObj.uuShipState}}</span>
+                    </div>
+                    <div class="div-underline spacing10"></div>
+                    <div class="row">
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left bold">Mobile Number:</span>
+                        <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">{{OrderSuccessDataObject.odUser.infoObj.uuMobileTelNo}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 custom-text12">
+            <ul class="list-group">
+                <li class="list-group-item text-center bold">
+                    <div class="row">
+                        <span class="text-center">ORDER STATUS</span>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <span class="col-xs-6 col-sm-6 col-md-6 col-lg-6 bold">Status</span>
+                        <span class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-right">{{OrderSuccessDataObject.controlObj.odStatus}}</span>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <span class="col-xs-3 col-sm-6 col-md-6 col-lg-6 bold" ><div>Txn ID</div> </span>
+                        <span class="col-xs-9 col-sm-6 col-md-6 col-lg-6 text-right"><qrcode data="{{OrderSuccessDataObject.odPayObj.TxnID}}"></qrcode></span>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <span class="col-xs-3 col-sm-6 col-md-6 col-lg-6 bold">Shipped Date</span>
+                        <span class="col-xs-9 col-sm-6 col-md-6 col-lg-6 text-right">{{OrderSuccessDataObject.odShip.odShipOutDate | date:"dd MMM yyyy 'at' h:mma"}}</span>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <span class="col-xs-3 col-sm-6 col-md-6 col-lg-6 bold">Tracking No</span>
+                        <span class="col-xs-9 col-sm-6 col-md-6 col-lg-6 text-right">{{OrderSuccessDataObject.odShip.odShipWayBillBarcode}}</span>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row small text-center text-muted">
+                        Tracking Number will appear after order is shipped
+                    </div>
+                </li>
+
+<!--                 <li class="list-group-item" style="font-weight:800">
+                    <div class="row">
+                        <span class="col-xs-2 col-sm-6 col-md-6 col-lg-6">Transaction ID</span>
+                        <span class="col-xs-4 col-sm-2 col-md-2 col-lg-2 text-center"> </span>
+                        <span class="col-xs-3 col-sm-2 col-md-2 col-lg-2 text-center"></span>
+                        <span class="col-xs-3 col-sm-2 col-md-2 col-lg-2 text-center">{{OrderSuccessDataObject.odPayObj.TxnID}}</span>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+    
+    <div class="row ">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 custom-text12">
+            <ul class="list-group">
+                <li class="list-group-item" style="background-color:#e5e5e5;font-weight:800;padding-top:0px;padding-bottom:0px">
+                    <div class="row">
+                        <span class="col-xs-6 col-sm-8 col-md-8 col-lg-8">ITEM(S)</span>
+                        <span class="col-xs-3 col-sm-2 col-md-2 col-lg-2 text-center">QTY</span>
+                        <!-- <span class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">UNIT PRICE</span> -->
+                        <span class="col-xs-3 col-sm-2 col-md-2 col-lg-2 text-center">TOTAL</span>
+                        <span class="col-xs-6 col-sm-8 col-md-8 col-lg-8"></span>
+                        <span class="col-xs-3 col-sm-2 col-md-2 col-lg-2 text-center"></span>
+                        <!-- <span class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">(RM)</span> -->
+                        <span class="col-xs-3 col-sm-2 col-md-2 col-lg-2 text-center">(RM)</span>
+                    </div>
+                </li>
+                <!--                 <li class="list-group-item" style="background-color:#e5e5e5;font-weight:800">
+                    <div class="row">
+                        <span class="col-xs-6 col-sm-6 col-md-6 col-lg-6"></span>
+                        <span class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center"></span>
+                        <span class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">(RM)</span>
+                        <span class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">(RM)</span>
+                    </div>
+                </li> -->
+                <li class="list-group-item" ng-repeat="item in OrderSuccessDataObject.odCart">
+                    <div class="row">
+                        <span class="col-xs-2 col-sm-2 col-md-2 col-lg-2"> <img class="img-thumbnail img-responsive img-circle noPad" ng-src='{{url}}thumbnail{{item.image}}' width="90"></span>
+                        <span class="col-xs-4 col-sm-6 col-md-6 col-lg-6">{{$index+1}}) {{item.name}}</span>
+                        <span class="col-xs-3 col-sm-2 col-md-2 col-lg-2 text-center">{{item.qty}}</span>
+                        <!-- <span class="col-xs-3 col-sm-2 col-md-2 col-lg-2 text-center">{{item.sellingprice |number:2}}</span> -->
+                        <span class="col-xs-3 col-sm-2 col-md-2 col-lg-2 text-center">{{item.checksubTotal|number:2}}</span>
+                    </div>
+                </li>
+                <li class="list-group-item" style="font-weight:800">
+                    <div class="row">
+                        <span class="col-xs-2 col-sm-6 col-md-6 col-lg-6">Total</span>
+                        <span class="col-xs-4 col-sm-2 col-md-2 col-lg-2 text-center"> </span>
+                        <span class="col-xs-3 col-sm-2 col-md-2 col-lg-2 text-center"></span>
+                        <span class="col-xs-3 col-sm-2 col-md-2 col-lg-2 text-center">{{OrderSuccessDataObject.odCartTotalAmount|number:2}}</span>
+                    </div>
+                </li>
+                <li class="list-group-item" style="font-weight:800">
+                    <div class="row">
+                        <span class="col-xs-2 col-sm-6 col-md-6 col-lg-6">Total + Shipping</span>
+                        <span class="col-xs-4 col-sm-2 col-md-2 col-lg-2 text-center"> </span>
+                        <span class="col-xs-3 col-sm-2 col-md-2 col-lg-2 text-center"></span>
+                        <span class="col-xs-3 col-sm-2 col-md-2 col-lg-2 text-center">{{OrderSuccessDataObject.odTotal|number:2}}</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
