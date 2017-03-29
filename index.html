@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <title>21cart - Shopping Rediscovered</title>
+    <meta property="og:title" content="21cart - Shopping Rediscovered" />
+    <meta property="og:image" content="http://www.21cart.com/main1.png" />
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no,  width=device-width">
+    <link rel="icon" type="image/x-icon" href="http://www.21cart.com/favicon.ico">
+    <link rel="stylesheet" href="frontend/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="frontend/bower_components/animate.css/animate.css" />
+    <link rel="stylesheet" href="frontend/styles/font-awesome.min.css">
+    <link rel="stylesheet" href="frontend/styles/museo.css" />
+    <!-- <link rel="stylesheet" href="frontend/styles/cart0.css"> -->
+
+   
+
+    <!-- Development Libs -->
+    <!-- <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css' type='text/css' media='all' /> -->
+</head>
+
+<body class="" ng-app="newCart" ng-controller="pageslideCtrl">
+    <!-- <div ng-class="{move:checked1}" ng-click="toggle1()"></div>
+    <div ng-class="{move:checked2}" ng-click="toggle2()"></div> -->
+    <!-- <div class="cyBannerBar container-fluid noPad"><img ui-sref="home" ui-sref-opts="{reload:true}" ng-src="{{url}}21logoSmall.png" alt="" height="60" width="150"></div> -->
+    <div class="hidePrint" ng-include="'frontend/views/header3.html'"></div>
+    <!-- <div class="hidePrint noPad" ng-include="'frontend/views/headerTest1.html'"></div> -->
+    <div class="hidePrint noPad" ng-include="'frontend/views/modal.html'"></div>
+    <!-- <div class="hidePrint animate-show" ng-hide="!showSearch" ng-include="'frontend/views/header4.html'"></div> -->
+    <div ui-view autoscroll="false" class="uiViewHeight"></div>
+    <div class="container-fluid hidePrint text-center footer">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <br>
+                <div class="bold">OUR COMPANY</div>
+                <br>
+                <div ui-sref="aboutUs">About Us</div>
+                <br>
+                <div ui-sref="privacyPolicy">Privacy Policy</div>
+                <br>
+                <div ui-sref="contactUs">Contact Us</div>
+                <br>
+                <div ui-sref="bankAccount">Bank Account</div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <br>
+                <div class="bold">PARTNERS</div>
+                <br>
+                <div ui-sref="sellOn21Cart">Sell on 21Cart.com</div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <br>
+                <div class="bold">SHIPPING & RETURNS</div>
+                <br>
+                <div ui-sref="shippingPolicy">Shipping Information</div>
+                <br>
+                <div ui-sref="returnPolicy">Return Policy</div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <br>
+                <div class="bold">KEEP IN TOUCH</div>
+                <br>
+                <a href="https://www.facebook.com/21Cart">
+                    <div><i class="fa fa-facebook-official" style="color:#3b5998;font-size:16px;width:16px"></i>&nbsp;Facebook</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="frontend/bower_components/jquery/dist/jquery.js"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+    <!-- // <script src="frontend/bower_components/es5-shim/es5-shim.js"></script> -->
+    <script src="frontend/bower_components/angular/angular.js"></script>
+    <!-- // <script src="frontend/bower_components/json3/lib/json3.js"></script> -->
+    <script src="frontend/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="frontend/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="frontend/bower_components/angular-animate/angular-animate.js"></script>
+    <!-- <script src="frontend/bower_components/matchmedia/matchMedia.js"></script> -->
+    <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js'></script>
+    <script src="frontend/bower_components/ngSticky/lib/sticky.js"></script>
+    <script src="frontend/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="frontend/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="frontend/bower_components/flow.js/dist/flow.js"></script>
+    <script src="frontend/bower_components/ng-flow/dist/ng-flow.js"></script>
+    <script src="frontend/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="frontend/bower_components/angular-utils-pagination/dirPagination.js"></script>
+    <script src="frontend/bower_components/qrcode-generator/js/qrcode.js"></script>
+    <script src="frontend/bower_components/angular-qrcode.js"></script>
+    <script src="frontend/bower_components/spin.js/spin.js"></script>
+    <script src="frontend/bower_components/angular-spinner/angular-spinner.js"></script>
+    <script src="frontend/bower_components/ngmap/build/scripts/ng-map.min.js"></script>
+    <script src="frontend/scripts/app.js"></script>
+    <script src="frontend/scripts/app.config.js"></script>
+    <script src="frontend/scripts/services/authtoken.js"></script>
+    <script src="frontend/scripts/services/alert.js"></script>
+    <script src="frontend/scripts/services/auth.js"></script>
+    <script src="frontend/scripts/services/authinterceptor.js"></script>
+    <script src="frontend/scripts/services/products.js"></script>
+    <script src="frontend/scripts/services/shoppingcart.js"></script>
+    <script src="frontend/scripts/controllers/page.js"></script>
+    <script src="frontend/scripts/controllers/paySuccess.js"></script>
+    <!-- <script src="frontend/scripts/controllers/header.js"></script> -->
+    <script src="frontend/scripts/controllers/logout.js"></script>
+    <script src="frontend/scripts/controllers/products.js"></script>
+    <script src="frontend/scripts/controllers/register.js"></script>
+    <script src="frontend/scripts/controllers/login.js"></script>
+    <script src="frontend/scripts/controllers/home.js"></script>
+    <script src="frontend/scripts/controllers/forgotPassword.js"></script>
+    <!-- <script src="http://maps.google.com/maps/api/js"></script>
+    // <script src="frontend/scripts/controllers/map.js"></script> -->
+    <script src="frontend/scripts/controllers/shoppingcart.js"></script>
+    <script src="frontend/scripts/controllers/modal.js"></script>
+    <!-- // <script src="frontend/scripts/services/shoppingCartAlpha.js"></script> -->
+    <script src="frontend/scripts/controllers/orderHistory.js"></script>
+    <script src="frontend/scripts/controllers/orderHistoryDetail.js"></script>
+    <script src="frontend/scripts/directives/validateEquals.js"></script>
+    <script src="frontend/scripts/directives/angular-pageslide-directive.js"></script>
+    <script src="frontend/scripts/directives/angular-bootstrap-select.js"></script>
+    <script src="frontend/scripts/controllers/productdetail.js"></script>
+    <script src="frontend/scripts/controllers/userprofile.js"></script>
+    <script src="frontend/scripts/controllers/dropDown.js"></script>
+    <script src="frontend/styles/bootbox.js"></script>
+</body>
+
+</html>

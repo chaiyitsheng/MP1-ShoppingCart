@@ -1,0 +1,31 @@
+{
+  "name": "new-card1",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "~1.2.0",
+    "json3": "~3.3.1",
+    "es5-shim": "~3.1.0",
+    "bootstrap": "~3.3.4",
+    "angular-ui-router": "~0.2.13",
+    "animate.css": "~3.2.0",
+    "angular-animate": "1.2.28",
+    "ngcart": "~0.0.3-rc.2",
+    "Bootflat": "~2.0.4",
+    "ngSticky": "~1.7.9",
+    "angular-bootstrap": "~0.12.1",
+    "ng-flow": "~2",
+    "angular-sanitize": "~1.4.2",
+    "angular-qrcode": "monospaced/angular-qrcode#~6.0.3",
+    "braintree-web": "~2.15.2",
+    "angular-spinner": "~0.8.0",
+    "css-modal": "~1.4.1"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.2.0",
+    "angular-scenario": "~1.2.0"
+  },
+  "appPath": "app",
+  "resolutions": {
+    "angular": "1.2.28"
+  }
+}
